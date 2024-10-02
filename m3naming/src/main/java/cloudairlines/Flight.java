@@ -1,7 +1,7 @@
 package cloudairlines;
 
 
-public class Flight {
+public record Flight(String flightName, String flight) {
 
 
 }

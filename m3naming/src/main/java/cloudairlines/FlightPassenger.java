@@ -1,6 +1,6 @@
 package cloudairlines;
 
-public class Client {
+public class FlightPassenger {
 
     String name;
     String surname;
