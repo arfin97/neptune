@@ -1,24 +1,12 @@
 package com.cloudairlines;
 
 
-public class Flight {
+public record Flight(String fromDest, String toDest, String date) {
 
-    private String fromDest;
-    private String toDest;
-    private String date;
-
-    public Flight(String fromDest, String toDest, String date) {
-        this.fromDest = fromDest;
-        this.toDest = toDest;
-        this.date = date;
+    public Flight {
+        if (fromDest == null || toDest == null || date == null) {
+            throw new IllegalArgumentException("Invalid flight details");
+        }
     }
 
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "fromDest='" + fromDest + '\'' +
-                ", toDest='" + toDest + '\'' +
-                ", date='" + date + '\'' +
-                '}';
-    }
 }
